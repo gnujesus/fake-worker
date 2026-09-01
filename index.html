@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
   <!-- Primary Meta Tags -->
-  <title>NativeReplay QA — Visual E2E Keystroke Test Runner & Input Replay Engine</title>
-  <meta name="title" content="NativeReplay QA — Visual E2E Keystroke Test Runner & Input Replay Engine" />
-  <meta name="description" content="Realistic visual end-to-end UX testing recorder and hardware keystroke replay tool. Replay human-paced input with stochastic jitter into complex web forms, canvas apps, and bot-protected dashboards." />
-  <meta name="keywords" content="e2e test recorder, automated ux testing, keystroke test replay, playwright alternative, selenium hardware events, bot detection testing, native input automation, synthetic test generator" />
-  <meta name="author" content="NativeReplay QA" />
+  <title>NativeReplay — Visual E2E Keystroke Test Runner & Input Replay Engine</title>
+  <meta name="title" content="NativeReplay — Visual E2E Keystroke Test Runner & Input Replay Engine" />
+  <meta name="description"
+    content="Realistic visual end-to-end UX testing recorder and hardware keystroke replay tool. Replay human-paced input with stochastic jitter into complex web forms, canvas apps, and bot-protected dashboards." />
+  <meta name="keywords"
+    content="e2e test recorder, automated ux testing, keystroke test replay, playwright alternative, selenium hardware events, bot detection testing, native input automation, synthetic test generator" />
+  <meta name="author" content="NativeReplay" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://nativereplay.io/" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nativereplay.io/" />
-  <meta property="og:title" content="NativeReplay QA — Visual E2E Keystroke Test Runner & Input Replay Engine" />
-  <meta property="og:description" content="Test input fields, forms, and desktop/web applications under realistic human-paced conditions with biological variance and native OS keystroke events." />
-  <meta property="og:image" content="https://nativereplay.io/assets/og-qa-preview.png" />
+  <meta property="og:title" content="NativeReplay — Visual E2E Keystroke Test Runner & Input Replay Engine" />
+  <meta property="og:description"
+    content="Test input fields, forms, and desktop/web applications under realistic human-paced conditions with biological variance and native OS keystroke events." />
+  <meta property="og:image" content="https://nativereplay.io/assets/og-preview.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://nativereplay.io/" />
-  <meta name="twitter:title" content="NativeReplay QA — Visual E2E Keystroke Test Runner" />
-  <meta name="twitter:description" content="Hardware-level keystroke input replay engine for QA engineers and developers. Zero programmatic injection errors." />
-  <meta name="twitter:image" content="https://nativereplay.io/assets/og-qa-preview.png" />
+  <meta name="twitter:title" content="NativeReplay — Visual E2E Keystroke Test Runner" />
+  <meta name="twitter:description"
+    content="Hardware-level keystroke input replay engine for QA engineers and developers. Zero programmatic injection errors." />
+  <meta name="twitter:image" content="https://nativereplay.io/assets/og-preview.png" />
 
   <!-- Google Fonts & Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet" />
 
   <style>
     :root {
@@ -41,19 +48,23 @@
       --bg-card: #15151a;
       --border-subtle: #272732;
       --border-accent: #b32d2d;
-      
+
       --text-primary: #f8fafc;
       --text-secondary: #94a3b8;
       --text-muted: #64748b;
-      
+
       /* Plain Soft Matte Red - Zero gradients */
-      --accent-main: #cc3d3d;       /* Soft Matte Red */
-      --accent-main-hover: #b32d2d; /* Deeper Warm Red */
-      --accent-plum: #7a1c1c;       /* Dark Rustic Red */
-      --accent-light: #e55353;      /* Soft Warm Red Accent */
+      --accent-main: #cc3d3d;
+      /* Soft Matte Red */
+      --accent-main-hover: #b32d2d;
+      /* Deeper Warm Red */
+      --accent-plum: #7a1c1c;
+      /* Dark Rustic Red */
+      --accent-light: #e55353;
+      /* Soft Warm Red Accent */
       --accent-emerald: #10b981;
       --accent-amber: #f59e0b;
-      
+
       /* STRICT SQUARE BORDERS - 0px radius */
       --radius-none: 0px;
     }
@@ -62,7 +73,8 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      border-radius: 0 !important; /* Force square design */
+      border-radius: 0 !important;
+      /* Force square design */
     }
 
     html {
@@ -292,9 +304,17 @@
       height: 10px;
     }
 
-    .window-dot.close { background-color: var(--accent-main); }
-    .window-dot.minimize { background-color: var(--accent-amber); }
-    .window-dot.maximize { background-color: var(--accent-emerald); }
+    .window-dot.close {
+      background-color: var(--accent-main);
+    }
+
+    .window-dot.minimize {
+      background-color: var(--accent-amber);
+    }
+
+    .window-dot.maximize {
+      background-color: var(--accent-emerald);
+    }
 
     .window-title {
       font-size: 12px;
@@ -352,8 +372,15 @@
     }
 
     @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
     }
 
     .live-stats {
@@ -684,14 +711,140 @@
       color: var(--text-primary);
     }
 
+    /* Top Development Announcement Banner */
+    .dev-banner {
+      background-color: var(--bg-surface-elevated);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 10px 16px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-align: center;
+    }
+
+    .banner-pill {
+      background-color: var(--accent-main);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 8px;
+      flex-shrink: 0;
+    }
+
+    /* Roadmap Section */
+    section.roadmap {
+      padding: 90px 0;
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+    }
+
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    .roadmap-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 30px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      position: relative;
+    }
+
+    .roadmap-card.active {
+      border-color: var(--accent-main);
+    }
+
+    .phase-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      width: fit-content;
+    }
+
+    .phase-tag.live {
+      background-color: rgba(16, 185, 129, 0.15);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .phase-tag.wip {
+      background-color: rgba(204, 61, 61, 0.15);
+      color: var(--accent-light);
+      border: 1px solid rgba(204, 61, 61, 0.3);
+    }
+
+    .phase-tag.planned {
+      background-color: var(--bg-surface-elevated);
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .roadmap-title {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .roadmap-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .roadmap-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .roadmap-status-dot {
+      width: 6px;
+      height: 6px;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    .roadmap-status-dot.done {
+      background-color: var(--accent-emerald);
+    }
+
+    .roadmap-status-dot.active {
+      background-color: var(--accent-light);
+    }
+
+    .roadmap-status-dot.pending {
+      background-color: var(--text-muted);
+    }
+
     /* Responsive */
-    @media (max-width: 868px) {
-      .pricing-grid {
+    @media (max-width: 960px) {
+      .roadmap-grid {
         grid-template-columns: 1fr;
       }
+
       .mockup-body {
         grid-template-columns: 1fr;
       }
+
       .nav-links {
         display: none;
       }
@@ -703,52 +856,40 @@
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "NativeReplay QA",
+    "name": "NativeReplay",
     "operatingSystem": "Windows, macOS, Linux",
     "applicationCategory": "DeveloperApplication",
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "Team Standalone (BYO AI Key)",
-        "price": "29.00",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "priceValidUntil": "2027-12-31"
-      },
-      {
-        "@type": "Offer",
-        "name": "Cloud AI Pro (Turnkey Synthetic Test Generator)",
-        "price": "5.00",
-        "priceCurrency": "USD",
-        "billingDuration": "P1M",
-        "availability": "https://schema.org/InStock",
-        "priceValidUntil": "2027-12-31"
-      }
-    ],
     "description": "Visual E2E testing tool and hardware keystroke replay recorder that bypasses bot-detection and accurately simulates authentic user input behavior."
   }
   </script>
 </head>
+
 <body>
+
+  <!-- Top Development Announcement Banner -->
+  <div class="dev-banner">
+    <span class="banner-pill">IN ACTIVE DEVELOPMENT</span>
+    <span>NativeReplay is currently under active engineering. Computer Vision & Form Automation beta releases
+      soon.</span>
+  </div>
 
   <!-- Navigation Bar -->
   <header class="navbar">
     <div class="container nav-inner">
       <a href="#" class="brand">
-        <div class="brand-logo">⚡</div>
-        <span class="brand-name">NativeReplay QA</span>
+        <span class="brand-name">NativeReplay</span>
       </a>
 
       <nav class="nav-links" aria-label="Main Navigation">
         <a href="#overview" class="nav-link">Overview</a>
         <a href="#comparison" class="nav-link">Why Not Selenium?</a>
         <a href="#features" class="nav-link">Features</a>
-        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#roadmap" class="nav-link">Development Status</a>
         <a href="#faq" class="nav-link">FAQ</a>
       </nav>
 
       <div class="nav-actions">
-        <a href="#pricing" class="btn btn-primary">Download Test Runner</a>
+        <a href="#roadmap" class="btn btn-primary">View Roadmap</a>
       </div>
     </div>
   </header>
@@ -763,17 +904,19 @@
         </div>
 
         <h1 class="hero-title">
-          Test UI Input Like Real Humans.<br />
-          <span class="accent-text">Without Flaky Programmatic Code Injections.</span>
+          Test UI
+          <span class="accent-text">Like Real Humans</span>
         </h1>
 
         <p class="hero-subtitle">
-          Modern SPAs, financial portals, and secure forms break or reject synthetic browser drivers. NativeReplay QA sends native OS hardware keystrokes with authentic Gaussian variance, biological pauses, and AI-generated edge-case datasets.
+          Modern SPAs, financial portals, and secure forms break or reject synthetic browser drivers. NativeReplay sends
+          native OS hardware keystrokes with authentic Gaussian variance, biological pauses, and AI-generated edge-case
+          datasets.
         </p>
 
         <div class="hero-cta-group">
-          <a href="#pricing" class="btn btn-primary btn-lg" style="padding: 15px 32px; font-size: 16px;">
-            Start Free QA Trial
+          <a href="#roadmap" class="btn btn-primary btn-lg" style="padding: 15px 32px; font-size: 16px;">
+            Explore Development Roadmap
           </a>
           <a href="#comparison" class="btn btn-secondary btn-lg" style="padding: 15px 28px; font-size: 16px;">
             Compare vs Selenium / Playwright
@@ -789,8 +932,9 @@
                 <div class="window-dot minimize"></div>
                 <div class="window-dot maximize"></div>
               </div>
-              <div class="window-title">NativeReplay QA — Hardware Input Test Runner</div>
-              <div style="font-size: 12px; color: var(--accent-emerald); font-family: monospace;">● READY (HOTKEY: F9)</div>
+              <div class="window-title">NativeReplay — Hardware Input Test Runner</div>
+              <div style="font-size: 12px; color: var(--accent-emerald); font-family: monospace;">● READY (HOTKEY: F9)
+              </div>
             </div>
 
             <div class="mockup-body">
@@ -824,7 +968,8 @@
                   <span style="color: var(--accent-light);">Native keydown/keyup</span>
                 </div>
                 <div class="code-box">
-                  <span id="typedOutput">Client reporting critical latency spike on EUR gateway during checkout...</span><span class="typing-cursor"></span>
+                  <span id="typedOutput">Client reporting critical latency spike on EUR gateway during
+                    checkout...</span><span class="typing-cursor"></span>
                 </div>
               </div>
             </div>
@@ -838,9 +983,11 @@
       <div class="container">
         <div class="section-header">
           <span class="section-tag">The Architecture Difference</span>
-          <h2 class="section-title">Why Traditional Browser Drivers Fail Form Testing</h2>
+          <h2 class="section-title">Why <span class="accent-text">Traditional Browser Drivers</span> Fail Form Testing
+          </h2>
           <p class="section-desc">
-            Headless automation libraries inject text via JavaScript DOM manipulation (`input.value = x`). That does not test true input behavior.
+            Headless automation libraries inject text via JavaScript DOM manipulation (`input.value = x`). That does not
+            test true input behavior.
           </p>
         </div>
 
@@ -849,29 +996,33 @@
             <tr>
               <th>Evaluation Factor</th>
               <th>Headless Scripts (Selenium / Playwright)</th>
-              <th style="color: var(--accent-light);">NativeReplay QA Engine</th>
+              <th style="color: var(--accent-light);">NativeReplay Engine</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>Event Dispatch</strong></td>
               <td>Simulated DOM events (often bypassed or filtered by frontend frameworks)</td>
-              <td style="color: var(--accent-light);"><strong>Hardware-level native OS events</strong> (indistinguishable from mechanical keyboard)</td>
+              <td style="color: var(--accent-light);"><strong>Hardware-level native OS events</strong>
+                (indistinguishable from mechanical keyboard)</td>
             </tr>
             <tr>
               <td><strong>Anti-Bot / Captcha Triggers</strong></td>
               <td>Triggers Cloudflare, Datadome, and Akamai bot blockers due to 0ms instant dumps</td>
-              <td style="color: var(--accent-light);"><strong>Bypasses bot-detection</strong> with Gaussian timing variance and human rhythm</td>
+              <td style="color: var(--accent-light);"><strong>Bypasses bot-detection</strong> with Gaussian timing
+                variance and human rhythm</td>
             </tr>
             <tr>
               <td><strong>Canvas & Desktop Apps</strong></td>
               <td>Fails on Electron, WebGL canvas, Flutter, or native OS dialogs</td>
-              <td style="color: var(--accent-light);"><strong>Universal compatibility:</strong> Works on desktop apps, native GUIs, and any active browser window</td>
+              <td style="color: var(--accent-light);"><strong>Universal compatibility:</strong> Works on desktop apps,
+                native GUIs, and any active browser window</td>
             </tr>
             <tr>
               <td><strong>Synthetic Edge-Case Data</strong></td>
               <td>Requires maintaining external CSV fixtures or hardcoded mock files</td>
-              <td style="color: var(--accent-light);"><strong>On-demand Gemini 2.5 generation</strong> of edge-case test payloads on the fly</td>
+              <td style="color: var(--accent-light);"><strong>On-demand Gemini 2.5 generation</strong> of edge-case test
+                payloads on the fly</td>
             </tr>
           </tbody>
         </table>
@@ -882,178 +1033,182 @@
     <section class="features" id="features">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Enterprise Test Capabilities</span>
+          <span class="section-tag">Enterprise Automation Capabilities</span>
           <h2 class="section-title">Built for QA Engineers & Modern Dev Teams</h2>
           <p class="section-desc">
-            Replicate real user data entry stress, validate debounced inputs, and test input fields under authentic mechanical speeds.
+            Autonomous visual recognition, full form lifecycle verification, element presence auditing, and live server
+            response inspection.
           </p>
         </div>
 
         <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon-box">⚡</div>
-            <h3>Zero-Code Visual Replay</h3>
+            <div class="feature-icon-box">📋</div>
+            <h3>Autonomous Form Recognition & Testing</h3>
             <p>
-              No complex WebDriver configurations or flaky selector maintenance. Arm the runner, click into your target input field, and let NativeReplay dispatch authentic test data.
+              Automatically identifies form fields, input labels, dropdowns, and checkboxes across complex multi-step
+              workflows. Fills data dynamically without depending on brittle CSS or XPath selectors.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">📡</div>
+            <h3>Accurate Server & Form Status Retrieval</h3>
+            <p>
+              Directly captures network transactions upon form submit. Validates HTTP response status codes (200 OK, 422
+              Unprocessable, 500 Error) and inspects JSON response payloads in real time.
             </p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon-box">🎯</div>
-            <h3>Stochastic Biological Variance</h3>
+            <h3>Visual Button & Component Recognition</h3>
             <p>
-              Calculates dynamic delays per character with ±35% Gaussian jitter, micro-pauses on punctuation, and natural typing velocity for testing debouncing and autosave logic.
+              Uses 2D pattern matching, OCR text locators, and Gemini multimodal vision to instantly identify buttons,
+              checkout triggers, icons, and interactive elements across any resolution.
             </p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon-box">🤖</div>
-            <h3>Turnkey Gemini 2.5 Flash Data</h3>
+            <div class="feature-icon-box">🔍</div>
+            <h3>Element Presence & State Verification</h3>
             <p>
-              Never write mock data files manually again. Prompt the AI QA engine to generate international text, stress-testing strings, or domain-specific payloads on demand.
+              Continuously verifies whether critical website elements, confirmation modals, error banners, and success
+              toasts actually render on screen before advancing to the next step.
             </p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon-box">🔒</div>
-            <h3>100% Client-Side Privacy</h3>
+            <div class="feature-icon-box">🌐</div>
+            <h3>Full Multi-Platform E2E Testing</h3>
             <p>
-              Runs entirely locally on your workstation. Native key events are emitted directly to the OS event queue without network telemetry or keystroke logging.
+              Replays complete end-to-end user journeys across web browsers, Electron apps, desktop software, and
+              terminal windows with seamless multi-window navigation.
             </p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon-box">🛑</div>
-            <h3>Emergency Killswitch Control</h3>
+            <div class="feature-icon-box">⚡</div>
+            <h3>Human-Grade Hardware Simulation</h3>
             <p>
-              Press <kbd style="background: var(--bg-surface-elevated); padding: 2px 6px; border: 1px solid var(--border-subtle);">F10</kbd> or <kbd style="background: var(--bg-surface-elevated); padding: 2px 6px; border: 1px solid var(--border-subtle);">Ctrl+Shift+Esc</kbd> at any split second to terminate execution without corrupting active records.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon-box">🕒</div>
-            <h3>Persistent Test Payload History</h3>
-            <p>
-              Review, reload, and manage historical test payloads with built-in metadata, word counts, and individual deletion tools.
+              Dispatches native OS keyboard and mouse events with Cubic Bézier trajectories, S-curve velocity easing,
+              and Gaussian timing jitter that never triggers anti-bot defenses.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
+    <!-- Development Status & Public Roadmap Section (Replaces Pricing) -->
+    <section class="roadmap" id="roadmap">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Transparent Licensing</span>
-          <h2 class="section-title">Select Your QA Tooling Plan</h2>
+          <span class="section-tag">Product Status & Roadmap</span>
+          <h2 class="section-title">Current Development Stage</h2>
           <p class="section-desc">
-            Pay once forever with your own team API key, or get turnkey cloud AI synthetic test data generation on a flexible monthly plan.
+            NativeReplay is actively progressing through our phased engineering milestones. Here is our transparent live
+            development status.
           </p>
         </div>
 
-        <div class="pricing-grid">
-          <!-- Tier 1: Lifetime License (BYO API Key) -->
-          <div class="pricing-card">
-            <div>
-              <h3 class="tier-name">Team Standalone</h3>
-              <p class="tier-desc">
-                One-time purchase for permanent desktop test runner usage. Perfect for developers who provide their own Gemini API key.
-              </p>
+        <div class="roadmap-grid">
+          <!-- Phase 1: Live Core -->
+          <div class="roadmap-card">
+            <span class="phase-tag live">● Live in v1.0 Core</span>
+            <h3 class="roadmap-title">Hardware Keystroke Engine</h3>
+            <p style="font-size: 13px; color: var(--text-secondary);">
+              Production-ready OS-level keystroke injection and human cadence simulation.
+            </p>
 
-              <div class="tier-price-box">
-                <span class="currency">$</span>
-                <span class="price-num">29</span>
-                <span class="billing-cycle">/ one-time payment</span>
-              </div>
-
-              <ul class="feature-list">
-                <li class="feature-item">
-                  <span class="check-icon">✓</span>
-                  <span><strong class="highlight-text">Permanent desktop license</strong> for NativeReplay QA</span>
-                </li>
-                <li class="feature-item">
-                  <span class="check-icon">✓</span>
-                  <span><strong class="highlight-text">Bring Your Own API Key</strong> (Gemini API free tier supported)</span>
-                </li>
-                <li class="feature-item">
-                  <span class="check-icon">✓</span>
-                  <span>Unlimited manual text and code test replay</span>
-                </li>
-                <li class="feature-item">
-                  <span class="check-icon">✓</span>
-                  <span>Customizable WPM velocity (10 – 240 WPM)</span>
-                </li>
-                <li class="feature-item">
-                  <span class="check-icon">✓</span>
-                  <span>Full Gaussian jitter & debounce stress engine</span>
-                </li>
-                <li class="feature-item">
-                  <span class="check-icon">✓</span>
-                  <span>Global trigger hotkeys (F9 start / F10 abort)</span>
-                </li>
-                <li class="feature-item">
-                  <span class="check-icon">✓</span>
-                  <span>All minor v2.x updates included</span>
-                </li>
-              </ul>
-            </div>
-
-            <a href="#checkout-lifetime" class="btn btn-secondary" style="width: 100%;">
-              Buy Standalone License ($29)
-            </a>
+            <ul class="roadmap-items">
+              <li class="roadmap-item">
+                <span class="roadmap-status-dot done"></span>
+                <span><strong>OS-Level Event Dispatch:</strong> Hardware keydown/keyup events without DOM
+                  injection.</span>
+              </li>
+              <li class="roadmap-item">
+                <span class="roadmap-status-dot done"></span>
+                <span><strong>Gaussian Jitter Math:</strong> ±35% biological randomness per keystroke.</span>
+              </li>
+              <li class="roadmap-item">
+                <span class="roadmap-status-dot done"></span>
+                <span><strong>Gemini 2.5 Flash Generator:</strong> Edge-case synthetic test payload generator.</span>
+              </li>
+              <li class="roadmap-item">
+                <span class="roadmap-status-dot done"></span>
+                <span><strong>Desktop Shell:</strong> Vite + React + TypeScript with collapsible sidebar &
+                  themes.</span>
+              </li>
+              <li class="roadmap-item">
+                <span class="roadmap-status-dot done"></span>
+                <span><strong>Global Safety Triggers:</strong> F9 trigger & F10 emergency abort.</span>
+              </li>
+            </ul>
           </div>
 
-          <!-- Tier 2: Cloud Pro (Monthly with Built-in API) -->
-          <div class="pricing-card popular">
-            <span class="popular-badge">Recommended</span>
-            <div>
-              <h3 class="tier-name">Cloud AI Pro</h3>
-              <p class="tier-desc">
-                Turnkey synthetic test case generator. Zero API key configuration required with hosted Gemini 2.5 Flash infrastructure.
-              </p>
+          <!-- Phase 2: Active Development -->
+          <div class="roadmap-card active">
+            <span class="phase-tag wip">● In Active Development (v1.5)</span>
+            <h3 class="roadmap-title">Computer Vision & Coordinates</h3>
+            <p style="font-size: 13px; color: var(--text-secondary);">
+              Automating visual element recognition and human-like Bézier mouse physics.
+            </p>
 
-              <div class="tier-price-box">
-                <span class="currency">$</span>
-                <span class="price-num">5</span>
-                <span class="billing-cycle">/ month</span>
-              </div>
+            <ul class="roadmap-items">
+              <li class="roadmap-item">
+                <span class="roadmap-status-dot active"></span>
+                <span><strong>Native Screen Capture:</strong> Multi-monitor snapshot grabber with DPI scaling.</span>
+              </li>
+              <li class="roadmap-item">
+                <span class="roadmap-status-dot active"></span>
+                <span><strong>2D Template Matcher:</strong> Normalized Cross-Correlation (NCC) pattern locator.</span>
+              </li>
+              <li class="roadmap-item">
+                <span class="roadmap-status-dot active"></span>
+                <span><strong>Tesseract OCR Locator:</strong> Bounding-box text finder for button labels.</span>
+              </li>
+              <li class="roadmap-item">
+                <span class="roadmap-status-dot active"></span>
+                <span><strong>Bézier Mouse Physics:</strong> Smooth human mouse curves and S-curve velocity
+                  easing.</span>
+              </li>
+              <li class="roadmap-item">
+                <span class="roadmap-status-dot active"></span>
+                <span><strong>Interactive Snipping Tool:</strong> Drag-to-crop visual target studio in UI.</span>
+              </li>
+            </ul>
+          </div>
 
-              <ul class="feature-list">
-                <li class="feature-item">
-                  <span class="check-icon">✓</span>
-                  <span><strong class="highlight-text">All Team Standalone features</strong> included</span>
-                </li>
-                <li class="feature-item">
-                  <span class="check-icon">✓</span>
-                  <span><strong class="highlight-text">Turnkey Gemini 2.5 AI</strong> — Zero API key setup required</span>
-                </li>
-                <li class="feature-item">
-                  <span class="check-icon">✓</span>
-                  <span><strong class="highlight-text">Unlimited synthetic test data generations</strong></span>
-                </li>
-                <li class="feature-item">
-                  <span class="check-icon">✓</span>
-                  <span>Enterprise QA prompt templates (Reviews, JSON, Logs)</span>
-                </li>
-                <li class="feature-item">
-                  <span class="check-icon">✓</span>
-                  <span>Priority fast-lane generation latency</span>
-                </li>
-                <li class="feature-item">
-                  <span class="check-icon">✓</span>
-                  <span>Automatic background updates & QA support</span>
-                </li>
-                <li class="feature-item">
-                  <span class="check-icon">✓</span>
-                  <span>Cancel anytime with 1 click</span>
-                </li>
-              </ul>
-            </div>
+          <!-- Phase 3: Planned -->
+          <div class="roadmap-card">
+            <span class="phase-tag planned">● Architecture Planned (v2.0)</span>
+            <h3 class="roadmap-title">Autonomous Network & Forms</h3>
+            <p style="font-size: 13px; color: var(--text-secondary);">
+              Standalone Go daemon engine with server response tracking and form loops.
+            </p>
 
-            <a href="#checkout-monthly" class="btn btn-primary" style="width: 100%;">
-              Start 7-Day Free Trial ($5/mo)
-            </a>
+            <ul class="roadmap-items">
+              <li class="roadmap-item">
+                <span class="roadmap-status-dot pending"></span>
+                <span><strong>Go Core Engine (`nativereplay-core`):</strong> Standalone daemon communicating via
+                  WebSocket.</span>
+              </li>
+              <li class="roadmap-item">
+                <span class="roadmap-status-dot pending"></span>
+                <span><strong>CDP Server Response Inspector:</strong> Captures HTTP status (200/400/500) and response
+                  bodies.</span>
+              </li>
+              <li class="roadmap-item">
+                <span class="roadmap-status-dot pending"></span>
+                <span><strong>Autonomous Form Loops:</strong> Look $\rightarrow$ Move $\rightarrow$ Type $\rightarrow$
+                  Submit $\rightarrow$ Diagnose errors.</span>
+              </li>
+              <li class="roadmap-item">
+                <span class="roadmap-status-dot pending"></span>
+                <span><strong>Headless CI/CD Runner:</strong> Execute visual test suites in automated GitHub Actions
+                  pipelines.</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -1064,7 +1219,7 @@
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Frequently Asked Questions</span>
-          <h2 class="section-title">Common Questions about NativeReplay QA</h2>
+          <h2 class="section-title">Common Questions about NativeReplay</h2>
         </div>
 
         <div class="faq-grid">
@@ -1074,7 +1229,10 @@
               <span>+</span>
             </div>
             <div class="faq-answer">
-              Selenium and Playwright inject text programmatically into DOM nodes. This often fails to trigger complex client-side listeners, debouncers, or WebGL/canvas controls, and frequently triggers bot-detection barriers on modern applications. NativeReplay QA operates at the OS hardware event layer, ensuring your application behaves exactly as it would with a human user typing at a keyboard.
+              Selenium and Playwright inject text programmatically into DOM nodes. This often fails to trigger complex
+              client-side listeners, debouncers, or WebGL/canvas controls, and frequently triggers bot-detection
+              barriers on modern applications. NativeReplay operates at the OS hardware event layer, ensuring your
+              application behaves exactly as it would with a human user typing at a keyboard.
             </div>
           </div>
 
@@ -1084,17 +1242,21 @@
               <span>+</span>
             </div>
             <div class="faq-answer">
-              When you click "Execute Test" or press <kbd>F9</kbd>, a 2-second countdown begins. You simply click into your target web form, desktop app, or text field, and NativeReplay will automatically replay the simulated keystrokes once the buffer expires.
+              When you click "Execute Test" or press <kbd>F9</kbd>, a 2-second countdown begins. You simply click into
+              your target web form, desktop app, or text field, and NativeReplay will automatically replay the simulated
+              keystrokes once the buffer expires.
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-question">
-              <span>What is the difference between the $29 and $5/mo plans?</span>
+              <span>What is the current release status of NativeReplay?</span>
               <span>+</span>
             </div>
             <div class="faq-answer">
-              The <strong>$29 Standalone</strong> plan gives you lifetime access to the desktop runner, allowing you to use your own Google Gemini API key. The <strong>$5/month Cloud AI Pro</strong> plan includes turnkey cloud AI synthetic test data generation without needing to manage your own API keys or billing accounts.
+              The v1.0 core keystroke simulation engine and AI test data generator are fully functional. We are
+              currently actively developing the v1.5 Computer Vision & Screen Snipping features and the v2.0 Go network
+              inspection daemon. Early access builds will open soon.
             </div>
           </div>
 
@@ -1104,7 +1266,9 @@
               <span>+</span>
             </div>
             <div class="faq-answer">
-              Yes. Because NativeReplay emits real OS keyboard events rather than browser-specific DOM code, it functions identically inside VS Code, terminal windows, Slack, desktop ERP software, or any window with an active text cursor.
+              Yes. Because NativeReplay emits real OS keyboard events rather than browser-specific DOM code, it
+              functions identically inside VS Code, terminal windows, Slack, desktop ERP software, or any window with an
+              active text cursor.
             </div>
           </div>
         </div>
@@ -1116,7 +1280,7 @@
   <footer>
     <div class="container footer-inner">
       <div class="copyright">
-        © <span id="currentYear"></span> NativeReplay QA Inc. Professional End-to-End Automated Input & UX Testing Tool.
+        © <span id="currentYear"></span> NativeReplay Inc. Professional End-to-End Automated Input & UX Testing Tool.
       </div>
       <div class="footer-links">
         <a href="#privacy" class="footer-link">Privacy Policy</a>
@@ -1136,7 +1300,7 @@
 
     function simulateTypingLoop() {
       if (!typedOutput) return;
-      
+
       if (charIdx < sampleSnippet.length) {
         typedOutput.appendChild(document.createTextNode(sampleSnippet[charIdx]));
         charIdx++;
@@ -1154,4 +1318,5 @@
     simulateTypingLoop();
   </script>
 </body>
+
 </html>

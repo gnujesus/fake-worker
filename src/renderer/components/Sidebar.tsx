@@ -62,7 +62,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
         <div className="sidebar-header">
           {!isCollapsed && (
             <div className="brand-section">
-              <div className="brand-logo">⚡</div>
               <span className="brand-title">NativeReplay</span>
             </div>
           )}
@@ -159,11 +158,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
         >
           <div className="profile-left">
             <div className="avatar-box">
-              {isPro ? '★' : 'QA'}
+              {isPro ? '★' : 'NR'}
             </div>
             {!isCollapsed && (
               <div className="profile-info">
-                <span className="profile-name">QA Engineer</span>
+                <span className="profile-name">User Account</span>
                 <span className="profile-tier">
                   {isPro ? 'Cloud Pro ($5/mo)' : 'Standalone'}
                 </span>

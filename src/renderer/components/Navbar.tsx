@@ -36,8 +36,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="app-header">
       <div className="brand-section">
-        <div className="brand-logo">⚡</div>
-        <span className="brand-title">NativeReplay QA</span>
+        <span className="brand-title">NativeReplay</span>
         <span style={{ fontSize: '11px', color: 'var(--text-muted)', borderLeft: '1px solid var(--border-subtle)', paddingLeft: '8px' }}>E2E Hardware Keystroke Engine</span>
       </div>
 
