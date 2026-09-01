@@ -5,27 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <!-- Primary Meta Tags -->
-  <title>Fake Worker — Natural Human Typing Simulator & AI Ghostwriter</title>
-  <meta name="title" content="Fake Worker — Natural Human Typing Simulator & AI Ghostwriter" />
-  <meta name="description" content="Simulate organic, realistic human keyboard typing at customizable WPM. Powered by Gemini 2.5 AI to draft and type convincing code, emails, and documentation in real time." />
-  <meta name="keywords" content="fake worker, typing simulator, human typing bot, auto typer, keystroke simulation, realistic typing, gemini ai typing, fake working desktop tool, automated typing desktop" />
-  <meta name="author" content="Fake Worker" />
+  <title>NativeReplay QA — Visual E2E Keystroke Test Runner & Input Replay Engine</title>
+  <meta name="title" content="NativeReplay QA — Visual E2E Keystroke Test Runner & Input Replay Engine" />
+  <meta name="description" content="Realistic visual end-to-end UX testing recorder and hardware keystroke replay tool. Replay human-paced input with stochastic jitter into complex web forms, canvas apps, and bot-protected dashboards." />
+  <meta name="keywords" content="e2e test recorder, automated ux testing, keystroke test replay, playwright alternative, selenium hardware events, bot detection testing, native input automation, synthetic test generator" />
+  <meta name="author" content="NativeReplay QA" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://fakeworker.app/" />
+  <link rel="canonical" href="https://nativereplay.io/" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://fakeworker.app/" />
-  <meta property="og:title" content="Fake Worker — Natural Human Typing Simulator & AI Ghostwriter" />
-  <meta property="og:description" content="Simulate realistic, human-paced keystroke typing at customizable WPM. Integrates Gemini AI for automated realistic coding and status reports." />
-  <meta property="og:image" content="https://fakeworker.app/assets/og-preview.png" />
+  <meta property="og:url" content="https://nativereplay.io/" />
+  <meta property="og:title" content="NativeReplay QA — Visual E2E Keystroke Test Runner & Input Replay Engine" />
+  <meta property="og:description" content="Test input fields, forms, and desktop/web applications under realistic human-paced conditions with biological variance and native OS keystroke events." />
+  <meta property="og:image" content="https://nativereplay.io/assets/og-qa-preview.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://fakeworker.app/" />
-  <meta name="twitter:title" content="Fake Worker — Natural Human Typing Simulator & AI Ghostwriter" />
-  <meta name="twitter:description" content="Simulate realistic keystroke typing character by character with stochastic jitter and punctuation micro-pauses." />
-  <meta name="twitter:image" content="https://fakeworker.app/assets/og-preview.png" />
+  <meta name="twitter:url" content="https://nativereplay.io/" />
+  <meta name="twitter:title" content="NativeReplay QA — Visual E2E Keystroke Test Runner" />
+  <meta name="twitter:description" content="Hardware-level keystroke input replay engine for QA engineers and developers. Zero programmatic injection errors." />
+  <meta name="twitter:image" content="https://nativereplay.io/assets/og-qa-preview.png" />
 
   <!-- Google Fonts & Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,41 +34,35 @@
 
   <style>
     :root {
-      /* Backgrounds & Surfaces */
-      --bg-base: #130a10;
-      --bg-surface: #1d101a;
-      --bg-surface-elevated: #281423;
-      --bg-card: #21111e;
-      --border-subtle: #3a1d33;
-      --border-accent: #9f1239;
+      /* Backgrounds & Solid Surfaces (Soft Matte Red Theme) */
+      --bg-base: #0a0a0c;
+      --bg-surface: #15151a;
+      --bg-surface-elevated: #1d1d24;
+      --bg-card: #15151a;
+      --border-subtle: #272732;
+      --border-accent: #b32d2d;
       
-      --text-primary: #fdf2f4;
-      --text-secondary: #d4a5b5;
-      --text-muted: #8d6274;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
       
-      /* Plain Purple-ish Red (Crimson / Berry / Plum / Wine) - No gradients */
-      --accent-main: #be123c;       /* Rose-Crimson / Red-Purple */
-      --accent-main-hover: #9f1239; /* Deep Wine */
-      --accent-plum: #831843;       /* Deep Plum */
-      --accent-light: #f43f5e;      /* Bright Berry */
+      /* Plain Soft Matte Red - Zero gradients */
+      --accent-main: #cc3d3d;       /* Soft Matte Red */
+      --accent-main-hover: #b32d2d; /* Deeper Warm Red */
+      --accent-plum: #7a1c1c;       /* Dark Rustic Red */
+      --accent-light: #e55353;      /* Soft Warm Red Accent */
       --accent-emerald: #10b981;
       --accent-amber: #f59e0b;
       
-      /* Slightly rounded borders */
-      --radius-xs: 3px;
-      --radius-sm: 5px;
-      --radius-md: 8px;
-      --radius-lg: 10px;
-      --radius-btn: 6px;
-      
-      --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.3);
-      --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.4);
+      /* STRICT SQUARE BORDERS - 0px radius */
+      --radius-none: 0px;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      border-radius: 0 !important; /* Force square design */
     }
 
     html {
@@ -119,13 +113,13 @@
     .brand-logo {
       width: 36px;
       height: 36px;
-      border-radius: var(--radius-sm);
       background-color: var(--accent-main);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 18px;
       color: #fff;
+      font-weight: 800;
     }
 
     .brand-name {
@@ -158,7 +152,7 @@
       gap: 16px;
     }
 
-    /* Buttons - slightly rounded, solid purple-red */
+    /* Buttons - Pure Square, Plain Colors */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -168,12 +162,11 @@
       font-size: 15px;
       font-weight: 600;
       padding: 11px 22px;
-      border-radius: var(--radius-btn);
       text-decoration: none;
       cursor: pointer;
-      transition: background-color 0.2s ease, border-color 0.2s ease;
       border: 1px solid transparent;
       outline: none;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
     }
 
     .btn-primary {
@@ -221,7 +214,6 @@
       align-items: center;
       gap: 8px;
       padding: 6px 14px;
-      border-radius: var(--radius-xs);
       background-color: var(--bg-surface-elevated);
       border: 1px solid var(--border-subtle);
       color: var(--accent-light);
@@ -233,18 +225,16 @@
     .badge-pill .pulse-dot {
       width: 8px;
       height: 8px;
-      border-radius: 50%;
       background-color: var(--accent-emerald);
-      box-shadow: 0 0 10px var(--accent-emerald);
     }
 
     h1.hero-title {
-      font-size: clamp(38px, 5.5vw, 64px);
+      font-size: clamp(36px, 5vw, 62px);
       font-weight: 800;
       line-height: 1.15;
       letter-spacing: -0.02em;
       margin-bottom: 24px;
-      max-width: 900px;
+      max-width: 960px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -256,7 +246,7 @@
     p.hero-subtitle {
       font-size: clamp(16px, 1.8vw, 19px);
       color: var(--text-secondary);
-      max-width: 680px;
+      max-width: 740px;
       margin: 0 auto 36px;
       font-weight: 400;
     }
@@ -269,7 +259,7 @@
       margin-bottom: 50px;
     }
 
-    /* Interactive Desktop Showcase Mockup */
+    /* Interactive Desktop Showcase Mockup (Pure Square) */
     .mockup-wrapper {
       max-width: 940px;
       margin: 0 auto;
@@ -279,9 +269,8 @@
     .mockup-window {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
       overflow: hidden;
-      box-shadow: var(--shadow-md);
+      box-shadow: none;
     }
 
     .mockup-header {
@@ -299,9 +288,8 @@
     }
 
     .window-dot {
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
+      width: 10px;
+      height: 10px;
     }
 
     .window-dot.close { background-color: var(--accent-main); }
@@ -325,7 +313,6 @@
     .preview-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-sm);
       padding: 18px;
       display: flex;
       flex-direction: column;
@@ -347,7 +334,6 @@
       font-size: 13px;
       background: var(--bg-base);
       border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-xs);
       padding: 14px;
       color: #fbcfe8;
       line-height: 1.6;
@@ -379,7 +365,6 @@
     .stat-pill {
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-xs);
       padding: 10px;
       text-align: center;
     }
@@ -396,6 +381,39 @@
       color: var(--text-muted);
     }
 
+    /* Comparison vs Selenium / Playwright */
+    section.comparison {
+      padding: 70px 0;
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 16px 20px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 14px;
+    }
+
+    .comparison-table th {
+      background-color: var(--bg-surface-elevated);
+      color: var(--text-primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+
     /* Features Section */
     section.features {
       padding: 90px 0;
@@ -404,7 +422,7 @@
 
     .section-header {
       text-align: center;
-      max-width: 680px;
+      max-width: 720px;
       margin: 0 auto 50px;
     }
 
@@ -439,7 +457,6 @@
     .feature-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
       padding: 30px 24px;
       transition: border-color 0.2s ease, background-color 0.2s ease;
       position: relative;
@@ -451,15 +468,14 @@
     }
 
     .feature-icon-box {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-sm);
+      width: 40px;
+      height: 40px;
       background-color: var(--bg-surface-elevated);
       border: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 18px;
       margin-bottom: 18px;
       color: var(--accent-light);
     }
@@ -496,7 +512,6 @@
     .pricing-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
       padding: 38px 32px;
       display: flex;
       flex-direction: column;
@@ -525,7 +540,6 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
       padding: 3px 12px;
-      border-radius: var(--radius-xs);
     }
 
     .tier-name {
@@ -600,7 +614,7 @@
 
     /* FAQ Section */
     section.faq {
-      padding: 100px 0;
+      padding: 90px 0;
     }
 
     .faq-grid {
@@ -614,14 +628,13 @@
     .faq-item {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
       overflow: hidden;
     }
 
     .faq-question {
-      padding: 22px 28px;
+      padding: 20px 24px;
       font-weight: 600;
-      font-size: 17px;
+      font-size: 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -630,16 +643,16 @@
     }
 
     .faq-answer {
-      padding: 0 28px 22px;
+      padding: 0 24px 20px;
       color: var(--text-secondary);
-      font-size: 15px;
+      font-size: 14px;
       line-height: 1.6;
     }
 
     /* Footer */
     footer {
       border-top: 1px solid var(--border-subtle);
-      padding: 60px 0 40px;
+      padding: 50px 0 35px;
       background-color: var(--bg-base);
     }
 
@@ -653,7 +666,7 @@
 
     .copyright {
       color: var(--text-muted);
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .footer-links {
@@ -663,7 +676,7 @@
 
     .footer-link {
       color: var(--text-secondary);
-      font-size: 14px;
+      font-size: 13px;
       text-decoration: none;
     }
 
@@ -690,13 +703,13 @@
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Fake Worker",
+    "name": "NativeReplay QA",
     "operatingSystem": "Windows, macOS, Linux",
-    "applicationCategory": "UtilitiesApplication",
+    "applicationCategory": "DeveloperApplication",
     "offers": [
       {
         "@type": "Offer",
-        "name": "Lifetime License (BYO API Key)",
+        "name": "Team Standalone (BYO AI Key)",
         "price": "29.00",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
@@ -704,15 +717,15 @@
       },
       {
         "@type": "Offer",
-        "name": "Cloud Pro (Zero Setup AI)",
-        "price": "9.99",
+        "name": "Cloud AI Pro (Turnkey Synthetic Test Generator)",
+        "price": "5.00",
         "priceCurrency": "USD",
         "billingDuration": "P1M",
         "availability": "https://schema.org/InStock",
         "priceValidUntil": "2027-12-31"
       }
     ],
-    "description": "Desktop typing simulator that mimics human keystrokes with realistic micro-pauses and integrates Gemini 2.5 AI for automated coding and communication."
+    "description": "Visual E2E testing tool and hardware keystroke replay recorder that bypasses bot-detection and accurately simulates authentic user input behavior."
   }
   </script>
 </head>
@@ -722,52 +735,53 @@
   <header class="navbar">
     <div class="container nav-inner">
       <a href="#" class="brand">
-        <div class="brand-logo">⌨</div>
-        <span class="brand-name">Fake Worker</span>
+        <div class="brand-logo">⚡</div>
+        <span class="brand-name">NativeReplay QA</span>
       </a>
 
       <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#overview" class="nav-link">Overview</a>
+        <a href="#comparison" class="nav-link">Why Not Selenium?</a>
         <a href="#features" class="nav-link">Features</a>
-        <a href="#how-it-works" class="nav-link">How It Works</a>
         <a href="#pricing" class="nav-link">Pricing</a>
         <a href="#faq" class="nav-link">FAQ</a>
       </nav>
 
       <div class="nav-actions">
-        <a href="#pricing" class="btn btn-primary">Get Fake Worker</a>
+        <a href="#pricing" class="btn btn-primary">Download Test Runner</a>
       </div>
     </div>
   </header>
 
   <main>
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="overview">
       <div class="container">
         <div class="badge-pill">
           <span class="pulse-dot"></span>
-          <span>v2.0 Released: Gemini 2.5 Flash Integration & Human Jitter</span>
+          <span>Enterprise E2E Testing Solution — Hardware-Level Keystroke Replay</span>
         </div>
 
         <h1 class="hero-title">
-          Type Like a Human.<br />
-          <span class="accent-text">Work Like a Machine.</span>
+          Test UI Input Like Real Humans.<br />
+          <span class="accent-text">Without Flaky Programmatic Code Injections.</span>
         </h1>
 
         <p class="hero-subtitle">
-          The ultimate desktop keystroke simulator. Type code, emails, or status reports character-by-character with natural typing variance, customizable WPM speeds, and built-in AI ghostwriting.
+          Modern SPAs, financial portals, and secure forms break or reject synthetic browser drivers. NativeReplay QA sends native OS hardware keystrokes with authentic Gaussian variance, biological pauses, and AI-generated edge-case datasets.
         </p>
 
         <div class="hero-cta-group">
-          <a href="#pricing" class="btn btn-primary btn-lg" style="padding: 16px 36px; font-size: 17px;">
-            Get Instant Access
+          <a href="#pricing" class="btn btn-primary btn-lg" style="padding: 15px 32px; font-size: 16px;">
+            Start Free QA Trial
           </a>
-          <a href="#how-it-works" class="btn btn-secondary btn-lg" style="padding: 16px 32px; font-size: 17px;">
-            Watch Demonstration
+          <a href="#comparison" class="btn btn-secondary btn-lg" style="padding: 15px 28px; font-size: 16px;">
+            Compare vs Selenium / Playwright
           </a>
         </div>
 
         <!-- Interactive Live Simulation Mockup -->
-        <div class="mockup-wrapper" id="how-it-works">
+        <div class="mockup-wrapper">
           <div class="mockup-window">
             <div class="mockup-header">
               <div class="window-dots">
@@ -775,42 +789,42 @@
                 <div class="window-dot minimize"></div>
                 <div class="window-dot maximize"></div>
               </div>
-              <div class="window-title">Fake Worker Desktop — Human Keystroke Engine</div>
-              <div style="font-size: 12px; color: #10b981; font-family: monospace;">● ARMED (F9)</div>
+              <div class="window-title">NativeReplay QA — Hardware Input Test Runner</div>
+              <div style="font-size: 12px; color: var(--accent-emerald); font-family: monospace;">● READY (HOTKEY: F9)</div>
             </div>
 
             <div class="mockup-body">
               <div class="preview-card">
                 <div class="preview-header">
-                  <span>AI Prompt</span>
-                  <span style="color: var(--accent-light);">Gemini 2.5 Flash</span>
+                  <span>Synthetic Test Data</span>
+                  <span style="color: var(--accent-light);">Gemini 2.5 QA Engine</span>
                 </div>
-                <div style="font-size: 14px; color: #cbd5e1; font-weight: 500;">
-                  "Write a high-performance Express middleware with JWT auth and telemetry"
+                <div style="font-size: 13px; color: #cbd5e1; font-weight: 500;">
+                  "Generate a 300-word international customer support ticket with special characters and line breaks"
                 </div>
                 <div class="live-stats">
                   <div class="stat-pill">
-                    <div class="stat-val" id="mockWpm">68</div>
-                    <div class="stat-lbl">WPM Speed</div>
+                    <div class="stat-val">72</div>
+                    <div class="stat-lbl">Target WPM</div>
                   </div>
                   <div class="stat-pill">
-                    <div class="stat-val" id="mockJitter">±35%</div>
+                    <div class="stat-val">±35%</div>
                     <div class="stat-lbl">Jitter Variance</div>
                   </div>
                   <div class="stat-pill">
                     <div class="stat-val">2.0s</div>
-                    <div class="stat-lbl">Buffer Time</div>
+                    <div class="stat-lbl">Focus Buffer</div>
                   </div>
                 </div>
               </div>
 
               <div class="preview-card">
                 <div class="preview-header">
-                  <span>Simulated Keystroke Output</span>
-                  <span style="color: var(--accent-light);">Real-time Typing</span>
+                  <span>Hardware Input Stream</span>
+                  <span style="color: var(--accent-light);">Native keydown/keyup</span>
                 </div>
                 <div class="code-box">
-                  <span id="typedOutput">export const authGuard = async (req, res, next) =&gt; {</span><span class="typing-cursor"></span>
+                  <span id="typedOutput">Client reporting critical latency spike on EUR gateway during checkout...</span><span class="typing-cursor"></span>
                 </div>
               </div>
             </div>
@@ -819,39 +833,84 @@
       </div>
     </section>
 
+    <!-- Comparison Section -->
+    <section class="comparison" id="comparison">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">The Architecture Difference</span>
+          <h2 class="section-title">Why Traditional Browser Drivers Fail Form Testing</h2>
+          <p class="section-desc">
+            Headless automation libraries inject text via JavaScript DOM manipulation (`input.value = x`). That does not test true input behavior.
+          </p>
+        </div>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Evaluation Factor</th>
+              <th>Headless Scripts (Selenium / Playwright)</th>
+              <th style="color: var(--accent-light);">NativeReplay QA Engine</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Event Dispatch</strong></td>
+              <td>Simulated DOM events (often bypassed or filtered by frontend frameworks)</td>
+              <td style="color: var(--accent-light);"><strong>Hardware-level native OS events</strong> (indistinguishable from mechanical keyboard)</td>
+            </tr>
+            <tr>
+              <td><strong>Anti-Bot / Captcha Triggers</strong></td>
+              <td>Triggers Cloudflare, Datadome, and Akamai bot blockers due to 0ms instant dumps</td>
+              <td style="color: var(--accent-light);"><strong>Bypasses bot-detection</strong> with Gaussian timing variance and human rhythm</td>
+            </tr>
+            <tr>
+              <td><strong>Canvas & Desktop Apps</strong></td>
+              <td>Fails on Electron, WebGL canvas, Flutter, or native OS dialogs</td>
+              <td style="color: var(--accent-light);"><strong>Universal compatibility:</strong> Works on desktop apps, native GUIs, and any active browser window</td>
+            </tr>
+            <tr>
+              <td><strong>Synthetic Edge-Case Data</strong></td>
+              <td>Requires maintaining external CSV fixtures or hardcoded mock files</td>
+              <td style="color: var(--accent-light);"><strong>On-demand Gemini 2.5 generation</strong> of edge-case test payloads on the fly</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <!-- Features Section -->
     <section class="features" id="features">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Designed for Perfection</span>
-          <h2 class="section-title">Indistinguishable from Human Keystrokes</h2>
+          <span class="section-tag">Enterprise Test Capabilities</span>
+          <h2 class="section-title">Built for QA Engineers & Modern Dev Teams</h2>
           <p class="section-desc">
-            Standard auto-typers dump text instantly or use mechanical intervals that trigger detection. Fake Worker is built differently.
+            Replicate real user data entry stress, validate debounced inputs, and test input fields under authentic mechanical speeds.
           </p>
         </div>
 
         <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon-box">🎯</div>
-            <h3>Natural Biological Variance</h3>
+            <div class="feature-icon-box">⚡</div>
+            <h3>Zero-Code Visual Replay</h3>
             <p>
-              Calculates dynamic delays per character with ±35% stochastic Gaussian variance, subtle rhythm breaks on spacebars, and extended contemplation pauses on periods, commas, and line breaks.
+              No complex WebDriver configurations or flaky selector maintenance. Arm the runner, click into your target input field, and let NativeReplay dispatch authentic test data.
             </p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon-box">⚡</div>
-            <h3>Global Hotkey & Delay Buffers</h3>
+            <div class="feature-icon-box">🎯</div>
+            <h3>Stochastic Biological Variance</h3>
             <p>
-              Hit <kbd style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">F9</kbd> or <kbd style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">Ctrl+Shift+Space</kbd>. A 2-second countdown gives you ample time to click into your target editor, document, or terminal window.
+              Calculates dynamic delays per character with ±35% Gaussian jitter, micro-pauses on punctuation, and natural typing velocity for testing debouncing and autosave logic.
             </p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon-box">🤖</div>
-            <h3>Integrated Gemini 2.5 Flash</h3>
+            <h3>Turnkey Gemini 2.5 Flash Data</h3>
             <p>
-              Never run out of convincing content. Prompt Gemini to draft production-grade TypeScript microservices, SQL queries, or engineering sprint summaries directly inside the application.
+              Never write mock data files manually again. Prompt the AI QA engine to generate international text, stress-testing strings, or domain-specific payloads on demand.
             </p>
           </div>
 
@@ -859,23 +918,23 @@
             <div class="feature-icon-box">🔒</div>
             <h3>100% Client-Side Privacy</h3>
             <p>
-              Runs completely locally on your desktop through native OS hooks. No telemetry, no keystroke tracking, and your text payloads never leave your computer.
+              Runs entirely locally on your workstation. Native key events are emitted directly to the OS event queue without network telemetry or keystroke logging.
             </p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon-box">🛑</div>
-            <h3>Instant Killswitch Safety</h3>
+            <h3>Emergency Killswitch Control</h3>
             <p>
-              Press <kbd style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">F10</kbd> or <kbd style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">Ctrl+Shift+Esc</kbd> at any split-second to instantly terminate typing simulation without messing up your active window.
+              Press <kbd style="background: var(--bg-surface-elevated); padding: 2px 6px; border: 1px solid var(--border-subtle);">F10</kbd> or <kbd style="background: var(--bg-surface-elevated); padding: 2px 6px; border: 1px solid var(--border-subtle);">Ctrl+Shift+Esc</kbd> at any split second to terminate execution without corrupting active records.
             </p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon-box">🖥️</div>
-            <h3>Cross-Application Native Control</h3>
+            <div class="feature-icon-box">🕒</div>
+            <h3>Persistent Test Payload History</h3>
             <p>
-              Types seamlessly into VS Code, JetBrains IDEs, Microsoft Word, Google Docs, Slack, Terminal, or any desktop text area.
+              Review, reload, and manage historical test payloads with built-in metadata, word counts, and individual deletion tools.
             </p>
           </div>
         </div>
@@ -886,10 +945,10 @@
     <section class="pricing" id="pricing">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Transparent Pricing</span>
-          <h2 class="section-title">Choose How You Want to Work</h2>
+          <span class="section-tag">Transparent Licensing</span>
+          <h2 class="section-title">Select Your QA Tooling Plan</h2>
           <p class="section-desc">
-            Pay once forever with your own API key, or enjoy zero-setup cloud AI features on a simple monthly plan.
+            Pay once forever with your own team API key, or get turnkey cloud AI synthetic test data generation on a flexible monthly plan.
           </p>
         </div>
 
@@ -897,9 +956,9 @@
           <!-- Tier 1: Lifetime License (BYO API Key) -->
           <div class="pricing-card">
             <div>
-              <h3 class="tier-name">Lifetime Standalone</h3>
+              <h3 class="tier-name">Team Standalone</h3>
               <p class="tier-desc">
-                One-time payment for lifetime app usage. Perfect for developers who bring their own free or paid Gemini API key.
+                One-time purchase for permanent desktop test runner usage. Perfect for developers who provide their own Gemini API key.
               </p>
 
               <div class="tier-price-box">
@@ -911,7 +970,7 @@
               <ul class="feature-list">
                 <li class="feature-item">
                   <span class="check-icon">✓</span>
-                  <span><strong class="highlight-text">Lifetime access</strong> to Fake Worker desktop app</span>
+                  <span><strong class="highlight-text">Permanent desktop license</strong> for NativeReplay QA</span>
                 </li>
                 <li class="feature-item">
                   <span class="check-icon">✓</span>
@@ -919,63 +978,63 @@
                 </li>
                 <li class="feature-item">
                   <span class="check-icon">✓</span>
-                  <span>Unlimited manual text & code typing</span>
+                  <span>Unlimited manual text and code test replay</span>
                 </li>
                 <li class="feature-item">
                   <span class="check-icon">✓</span>
-                  <span>Customizable WPM velocity (10 – 300 WPM)</span>
+                  <span>Customizable WPM velocity (10 – 240 WPM)</span>
                 </li>
                 <li class="feature-item">
                   <span class="check-icon">✓</span>
-                  <span>Full human jitter & punctuation pause engine</span>
+                  <span>Full Gaussian jitter & debounce stress engine</span>
                 </li>
                 <li class="feature-item">
                   <span class="check-icon">✓</span>
-                  <span>Global hotkeys (F9 start / F10 emergency abort)</span>
+                  <span>Global trigger hotkeys (F9 start / F10 abort)</span>
                 </li>
                 <li class="feature-item">
                   <span class="check-icon">✓</span>
-                  <span>All future v2.x app updates included</span>
+                  <span>All minor v2.x updates included</span>
                 </li>
               </ul>
             </div>
 
-            <a href="#checkout-lifetime" class="btn btn-secondary btn-lg" style="width: 100%;">
-              Buy Lifetime License ($29)
+            <a href="#checkout-lifetime" class="btn btn-secondary" style="width: 100%;">
+              Buy Standalone License ($29)
             </a>
           </div>
 
           <!-- Tier 2: Cloud Pro (Monthly with Built-in API) -->
           <div class="pricing-card popular">
-            <span class="popular-badge">Most Popular</span>
+            <span class="popular-badge">Recommended</span>
             <div>
               <h3 class="tier-name">Cloud AI Pro</h3>
               <p class="tier-desc">
-                Zero setup required. Unlimited AI generation powered by our cloud servers — no API keys or developer accounts needed.
+                Turnkey synthetic test case generator. Zero API key configuration required with hosted Gemini 2.5 Flash infrastructure.
               </p>
 
               <div class="tier-price-box">
                 <span class="currency">$</span>
-                <span class="price-num">9</span><span style="font-size: 26px; font-weight: 700;">.99</span>
+                <span class="price-num">5</span>
                 <span class="billing-cycle">/ month</span>
               </div>
 
               <ul class="feature-list">
                 <li class="feature-item">
                   <span class="check-icon">✓</span>
-                  <span><strong class="highlight-text">All Lifetime Standalone features</strong> included</span>
+                  <span><strong class="highlight-text">All Team Standalone features</strong> included</span>
                 </li>
                 <li class="feature-item">
                   <span class="check-icon">✓</span>
-                  <span><strong class="highlight-text">Built-in Gemini 2.5 AI</strong> — Zero API key setup required</span>
+                  <span><strong class="highlight-text">Turnkey Gemini 2.5 AI</strong> — Zero API key setup required</span>
                 </li>
                 <li class="feature-item">
                   <span class="check-icon">✓</span>
-                  <span><strong class="highlight-text">Unlimited AI text & code generations</strong> included</span>
+                  <span><strong class="highlight-text">Unlimited synthetic test data generations</strong></span>
                 </li>
                 <li class="feature-item">
                   <span class="check-icon">✓</span>
-                  <span>Curated prompt templates (Full Microservices, Status Emails, Docs)</span>
+                  <span>Enterprise QA prompt templates (Reviews, JSON, Logs)</span>
                 </li>
                 <li class="feature-item">
                   <span class="check-icon">✓</span>
@@ -983,17 +1042,17 @@
                 </li>
                 <li class="feature-item">
                   <span class="check-icon">✓</span>
-                  <span>Automatic background updates & premium support</span>
+                  <span>Automatic background updates & QA support</span>
                 </li>
                 <li class="feature-item">
                   <span class="check-icon">✓</span>
-                  <span>Cancel or switch plans anytime with 1 click</span>
+                  <span>Cancel anytime with 1 click</span>
                 </li>
               </ul>
             </div>
 
-            <a href="#checkout-monthly" class="btn btn-primary btn-lg" style="width: 100%;">
-              Start 7-Day Free Trial
+            <a href="#checkout-monthly" class="btn btn-primary" style="width: 100%;">
+              Start 7-Day Free Trial ($5/mo)
             </a>
           </div>
         </div>
@@ -1004,48 +1063,48 @@
     <section class="faq" id="faq">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Got Questions?</span>
-          <h2 class="section-title">Frequently Asked Questions</h2>
+          <span class="section-tag">Frequently Asked Questions</span>
+          <h2 class="section-title">Common Questions about NativeReplay QA</h2>
         </div>
 
         <div class="faq-grid">
           <div class="faq-item">
             <div class="faq-question">
-              <span>What is the difference between the 2 tiers?</span>
+              <span>Why should I use this instead of Selenium or Playwright?</span>
               <span>+</span>
             </div>
             <div class="faq-answer">
-              The <strong>Lifetime Standalone</strong> plan ($29 one-time) gives you permanent access to the desktop software. You can paste any text you want or input your own personal Google Gemini API key (which has a generous free tier). The <strong>Cloud AI Pro</strong> plan ($9.99/mo) handles all AI generation for you with zero configuration — no developer accounts or API keys required.
+              Selenium and Playwright inject text programmatically into DOM nodes. This often fails to trigger complex client-side listeners, debouncers, or WebGL/canvas controls, and frequently triggers bot-detection barriers on modern applications. NativeReplay QA operates at the OS hardware event layer, ensuring your application behaves exactly as it would with a human user typing at a keyboard.
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-question">
-              <span>Can anti-cheat or employee monitoring software detect it?</span>
+              <span>How does the 2-second delay buffer work?</span>
               <span>+</span>
             </div>
             <div class="faq-answer">
-              Unlike copy-pasting or basic macro clickers that send instant string dumps at impossible speeds, Fake Worker sends individual hardware-level native OS key events with random Gaussian variance (±35%) and biological punctuation delays that replicate real typing rhythms.
+              When you click "Execute Test" or press <kbd>F9</kbd>, a 2-second countdown begins. You simply click into your target web form, desktop app, or text field, and NativeReplay will automatically replay the simulated keystrokes once the buffer expires.
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-question">
-              <span>How do I switch windows before it starts typing?</span>
+              <span>What is the difference between the $29 and $5/mo plans?</span>
               <span>+</span>
             </div>
             <div class="faq-answer">
-              When you arm the app and press the global hotkey (or click "Start Now"), Fake Worker initiates a 2-second countdown buffer. You simply click into your editor, document, or terminal, place your cursor, and the typing begins automatically.
+              The <strong>$29 Standalone</strong> plan gives you lifetime access to the desktop runner, allowing you to use your own Google Gemini API key. The <strong>$5/month Cloud AI Pro</strong> plan includes turnkey cloud AI synthetic test data generation without needing to manage your own API keys or billing accounts.
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-question">
-              <span>Can I get a refund if it doesn't work for me?</span>
+              <span>Can I test non-browser desktop applications?</span>
               <span>+</span>
             </div>
             <div class="faq-answer">
-              Yes, we provide a 14-day 100% money-back guarantee on all licenses with no questions asked.
+              Yes. Because NativeReplay emits real OS keyboard events rather than browser-specific DOM code, it functions identically inside VS Code, terminal windows, Slack, desktop ERP software, or any window with an active text cursor.
             </div>
           </div>
         </div>
@@ -1057,22 +1116,21 @@
   <footer>
     <div class="container footer-inner">
       <div class="copyright">
-        © <span id="currentYear"></span> Fake Worker Inc. All rights reserved. Designed for productivity and testing.
+        © <span id="currentYear"></span> NativeReplay QA Inc. Professional End-to-End Automated Input & UX Testing Tool.
       </div>
       <div class="footer-links">
         <a href="#privacy" class="footer-link">Privacy Policy</a>
         <a href="#terms" class="footer-link">Terms of Service</a>
-        <a href="#support" class="footer-link">Support & Documentation</a>
+        <a href="#support" class="footer-link">Documentation & API</a>
       </div>
     </div>
   </footer>
 
-  <!-- Interactive Typing Demonstration Script -->
+  <!-- Mockup Keystroke Simulation Script -->
   <script>
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-    // Mock typing animation in the hero preview
-    const sampleSnippet = "export const authGuard = async (req, res, next) => {\n  const token = req.headers['authorization'];\n  if (!token) return res.status(401).json({ error: 'Unauthorized' });\n  const user = await verifyJwtToken(token);\n  req.user = user;\n  return next();\n};";
+    const sampleSnippet = "Client reporting critical latency spike on EUR gateway during checkout with 400 Bad Request error...";
     const typedOutput = document.getElementById('typedOutput');
     let charIdx = 0;
 
@@ -1080,20 +1138,11 @@
       if (!typedOutput) return;
       
       if (charIdx < sampleSnippet.length) {
-        const char = sampleSnippet[charIdx];
-        if (char === '\n') {
-          typedOutput.innerHTML += '<br/>&nbsp;&nbsp;';
-        } else {
-          typedOutput.appendChild(document.createTextNode(char));
-        }
+        typedOutput.appendChild(document.createTextNode(sampleSnippet[charIdx]));
         charIdx++;
-
-        // Calculate variance delay for hero demonstration
-        let delay = 35 + Math.random() * 45;
-        if (['.', '{', '}', ';', '\n'].includes(char)) delay += 120;
+        let delay = 35 + Math.random() * 40;
         setTimeout(simulateTypingLoop, delay);
       } else {
-        // Pause and reset
         setTimeout(() => {
           typedOutput.textContent = '';
           charIdx = 0;

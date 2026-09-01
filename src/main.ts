@@ -192,13 +192,19 @@ function createWindow(): void {
     },
   });
 
-  const srcHtmlPath = path.join(__dirname, '..', 'src', 'index.html');
-  const distHtmlPath = path.join(__dirname, 'index.html');
+  const isDev = !app.isPackaged && process.env.NODE_ENV === 'development';
+  const devServerUrl = 'http://localhost:5173';
+  const reactDistPath = path.join(__dirname, '..', 'dist-react', 'index.html');
 
-  if (require('fs').existsSync(srcHtmlPath)) {
-    mainWindow.loadFile(srcHtmlPath);
+  if (isDev) {
+    mainWindow.loadURL(devServerUrl).catch(() => {
+      mainWindow?.loadFile(reactDistPath);
+    });
+  } else if (require('fs').existsSync(reactDistPath)) {
+    mainWindow.loadFile(reactDistPath);
   } else {
-    mainWindow.loadFile(distHtmlPath);
+    // Fallback to src/index.html if build hasn't run yet
+    mainWindow.loadFile(path.join(__dirname, '..', 'src', 'index.html'));
   }
 
   mainWindow.on('closed', () => {

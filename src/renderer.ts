@@ -1,3 +1,5 @@
+/// <reference path="./types/electron-window.d.ts" />
+
 // Elements
 const apiKeyInput = document.getElementById('apiKeyInput') as HTMLInputElement;
 const promptInput = document.getElementById('promptInput') as HTMLInputElement;
