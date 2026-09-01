@@ -1,13 +1,13 @@
-# NativeReplay Core: Go Computer Vision, Form Automation & Network Engine
+# NativeReplay Core: Form Recognition & Automation Engine
 
-> **Architecture:** A high-performance standalone Go library and daemon engine (`nativereplay-core`) that provides **Computer Vision, Human-like Input Automation, Gemini Multimodal Reasoning, and Server/Network Inspection** for the NativeReplay QA desktop app.
+> **Architecture:** A high-performance standalone Go library and daemon engine (`fake-worker-libs/form-recognition`) that provides **Computer Vision, Human-like Input Automation, Gemini Multimodal Reasoning, and Server/Network Inspection** for the NativeReplay desktop app.
 
 ---
 
-## 📁 Repository Structure (`nativereplay-core/`)
+## 📁 Repository Structure (`fake-worker-libs/form-recognition/`)
 
 ```
-nativereplay-core/
+fake-worker-libs/form-recognition/
 ├── go.mod                                # Go module definition
 ├── cmd/
 │   └── agent/
@@ -35,7 +35,7 @@ nativereplay-core/
 
 ## 📦 Required Go Dependencies
 
-Run these commands inside the `nativereplay-core/` directory:
+Run these commands inside the `fake-worker-libs/form-recognition/` directory:
 
 ```bash
 # Screen Capture & Imaging
